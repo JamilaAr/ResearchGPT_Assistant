@@ -1,1 +1,1 @@
-# research_gpt_assistant
+# ResearchGPT_Assistant
