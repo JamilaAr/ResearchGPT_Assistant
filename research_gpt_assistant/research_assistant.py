@@ -5,7 +5,7 @@ import time
 import difflib
 import logging
 from mistralai.client import MistralClient
-# from mistralai.models.chat_completion import ChatMessage
+from mistralai.models.chat_completion import ChatMessage 
 
 class ResearchGPTAssistant:
     def __init__(self, config, doc_processor):
@@ -17,20 +17,27 @@ class ResearchGPTAssistant:
         """
         self.config = config
         self.doc_processor = doc_processor
-        # Initialize Mistral client
-        self.client = MistralClient(api_key=self.config.MISTRAL_API_KEY)
+        self.logger = getattr(config, "logger", logging.getLogger(__name__))
+
+        # Initialize the Mistral client properly here
+        self.client = MistralClient(api_key=config.MISTRAL_API_KEY)
+
+    def answer_research_question(self, question, use_cot=False, use_verification=False):
+        """Basic placeholder for answering research questions."""
+        print(f"[ResearchGPTAssistant] Received question: {question}")
+        return "This is a placeholder answer until full reasoning is implemented."
 
     def _call_mistral(self, prompt, temperature=0.2):
         """
         Call Mistral API with a prompt and return response text.
         """
         try:
-            response = self.client.chat_completion.create(
-                model="mistral-7b-chat",
+            response = self.client.chat(
+                model="mistral-large-latest",  # updated to correct method and model
                 messages=[{"role": "user", "content": prompt}],
-                temperature=temperature
+                temperature=temperature,
             )
-            return response.choices[0].message.content
+            return response.choices[0].message["content"]
         except Exception as e:
             logging.error(f"Mistral API call failed: {str(e)}")
             return "Error: Mistral API call failed."

@@ -13,14 +13,16 @@ from dotenv import load_dotenv
 
 class Config:
     def __init__(self):
-        # TODO: Load environment variables
+        # Load environment variables
         load_dotenv()
+        env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
+        load_dotenv(dotenv_path=env_path)
         
-        # TODO: Mistral API settings
-        self.MISTRAL_API_KEY = "MISTRAL_API_KEY"  # Replace with actual key
-        self.MODEL_NAME = "mistral-medium"  # TODO: Choose appropriate Mistral model
-        self.TEMPERATURE = 0.1  # TODO: Set temperature for consistent responses
-        self.MAX_TOKENS = 1000  # TODO: Set maximum response length
+        # Mistral API settings
+        self.MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
+        self.MODEL_NAME = "mistral-medium"  # Choose appropriate Mistral model
+        self.TEMPERATURE = 0.1  # Set temperature for consistent responses
+        self.MAX_TOKENS = 1000  # Set maximum response length
         
         # TODO: Directory paths
         self.DATA_DIR = "data/"

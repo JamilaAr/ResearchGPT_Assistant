@@ -17,6 +17,8 @@ from document_processor import DocumentProcessor
 from research_assistant import ResearchGPTAssistant
 from research_agents import AgentOrchestrator
 
+
+
 def main():
     print("=== ResearchGPT Assistant - Full Demo ===\n")
 
@@ -30,7 +32,9 @@ def main():
 
     # Step 2: Process sample PDFs
     print("2) Processing sample documents...")
-    sample_dir = getattr(cfg, "SAMPLE_PAPERS_DIR", os.path.join(getattr(cfg, "DATA_DIR", "data"), "sample_papers"))
+    cfg.DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
+
+    sample_dir = getattr(cfg, "SAMPLE_PAPERS_DIR", os.path.join(cfg.DATA_DIR, "sample_papers"))
     if not os.path.exists(sample_dir):
         print(f"   Sample papers dir not found: {sample_dir}")
         print("   Create the folder and add PDFs, then rerun.")
@@ -85,7 +89,7 @@ def main():
     cot_q = "What are the main advantages and limitations of deep learning?"
     try:
         cot_resp = assistant.answer_research_question(cot_q, use_cot=True, use_verification=False)
-        print("   CoT answer length:", len(cot_resp.get("answer", "")))
+        print("   CoT answer length:", len(cot_resp))
         _save_result("cot_response.json", cot_resp, cfg)
     except Exception as e:
         print("   ! CoT demo failed:", e)
