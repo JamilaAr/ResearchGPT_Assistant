@@ -24,11 +24,12 @@ class Config:
         self.TEMPERATURE = 0.1  # Set temperature for consistent responses
         self.MAX_TOKENS = 1000  # Set maximum response length
         
-        # TODO: Directory paths
-        self.DATA_DIR = "data/"
-        self.SAMPLE_PAPERS_DIR = "data/sample_papers/"
-        self.PROCESSED_DIR = "data/processed/"
-        self.RESULTS_DIR = "results/"
+        
+        # Directory paths
+        self.DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
+        self.SAMPLE_PAPERS_DIR = os.path.join(self.DATA_DIR, "sample_papers")  # <-- point to PDFs
+        self.PROCESSED_DIR = os.path.join(self.DATA_DIR, "processed")
+        self.RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
         
         # TODO: Processing parameters
         self.CHUNK_SIZE = 1000  # TODO: Set text chunk size for processing

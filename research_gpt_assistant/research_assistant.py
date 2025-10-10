@@ -37,7 +37,7 @@ class ResearchGPTAssistant:
                 messages=[{"role": "user", "content": prompt}],
                 temperature=temperature,
             )
-            return response.choices[0].message["content"]
+            return response.choices[0].message.content
         except Exception as e:
             logging.error(f"Mistral API call failed: {str(e)}")
             return "Error: Mistral API call failed."

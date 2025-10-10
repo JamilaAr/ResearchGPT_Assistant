@@ -34,7 +34,7 @@ def main():
     print("2) Processing sample documents...")
     cfg.DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 
-    sample_dir = getattr(cfg, "SAMPLE_PAPERS_DIR", os.path.join(cfg.DATA_DIR, "sample_papers"))
+    sample_dir = os.path.join(os.path.dirname(__file__), "data", "sample_papers")
     if not os.path.exists(sample_dir):
         print(f"   Sample papers dir not found: {sample_dir}")
         print("   Create the folder and add PDFs, then rerun.")
