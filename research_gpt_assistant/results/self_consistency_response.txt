@@ -1,0 +1,14 @@
+Neural networks learn through a process called **training**, which involves adjusting their internal parameters (weights and biases) to minimize the difference between predicted outputs and actual data. This is typically achieved via:
+
+1. **Forward Propagation** – Input data passes through the network’s layers, generating an output.
+2. **Loss Calculation** – The output is compared to the true value using a **loss function** (e.g., mean squared error for regression, cross-entropy for classification).
+3. **Backpropagation** – The network calculates the gradient of the loss function with respect to each weight (using the chain rule from calculus) to determine how much to adjust them.
+4. **Optimization** – An **optimizer** (e.g., stochastic gradient descent, Adam) updates the weights iteratively to reduce the loss.
+
+Key enablers:
+- **Data**: Large, labeled datasets (for supervised learning) or unstructured data (for unsupervised/semi-supervised methods).
+- **Activation Functions** (e.g., ReLU, sigmoid): Introduce non-linearity, allowing networks to model complex patterns.
+- **Hyperparameters**: Learning rate, batch size, and architecture (e.g., layers, neurons) are tuned for performance.
+
+*Relevance to Context*:
+The paper highlights AI’s role in research workflows—neural networks’ ability to **automate pattern discovery** (via learning) accelerates analysis in fields like healthcare (e.g., diagnosing diseases from medical images) and business (e.g., predictive analytics). Ethical challenges (e.g., bias in training data) arise from how and what these networks learn.
