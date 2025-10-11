@@ -1,14 +1,4 @@
 # main.py
-"""
-Complete demo script for ResearchGPT Assistant
-Implements:
-- System initialization
-- Document processing & indexing
-- Demonstrations: similarity search, CoT, Self-Consistency, ReAct
-- Agent coordination demos (summarizer, QA, workflow, verification)
-- Results saving and final demo report
-"""
-
 import os
 import json
 import traceback
@@ -163,7 +153,7 @@ def main():
         print("   ! Workflow agent failed:", e)
         traceback.print_exc()
 
-    # Verification Agent (via orchestrator if available)
+    # Verification Agent
     print("\n10) Verification demo")
     try:
         # Use assistant's verify function directly (or route to orchestrator if it has 'verify')

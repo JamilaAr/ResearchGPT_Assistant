@@ -1,7 +1,6 @@
 # research_agents.py
 import json
 from typing import List, Dict, Any
-
 # Import the assistant class from research_assistant.py
 from research_assistant import ResearchGPTAssistant
 
@@ -86,7 +85,6 @@ Return JSON with:
 
 
 # QA Agent
-
 class QAAgent(BaseAgent):
     def __init__(self, research_assistant: ResearchGPTAssistant):
         super().__init__(research_assistant)
@@ -143,7 +141,6 @@ If answer is not in context, say "Not found in provided documents".
 
 
 # Verification Agent
-
 class VerificationAgent(BaseAgent):
     def __init__(self, research_assistant: ResearchGPTAssistant):
         super().__init__(research_assistant)
@@ -180,7 +177,6 @@ Return JSON with:
 
 
 # Research Workflow Agent
-
 class ResearchWorkflowAgent(BaseAgent):
     def __init__(self, research_assistant: ResearchGPTAssistant):
         super().__init__(research_assistant)
@@ -241,7 +237,6 @@ Return JSON with "gaps".
 
 
 # Agent Orchestrator
-
 class AgentOrchestrator:
     def __init__(self, research_assistant: ResearchGPTAssistant):
         self.agents = {

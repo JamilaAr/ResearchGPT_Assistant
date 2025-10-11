@@ -1,13 +1,4 @@
-"""
-Configuration file for ResearchGPT Assistant
-
-TODO: Complete the following tasks:
-1. Set up Mistral API configuration
-2. Define file paths for data directories
-3. Set up logging configuration
-4. Define model parameters (temperature, max_tokens, etc.)
-"""
-
+# config.py
 import os
 from dotenv import load_dotenv
 
