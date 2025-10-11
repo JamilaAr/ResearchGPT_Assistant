@@ -3,17 +3,19 @@
 ResearchGPT Assistant is a Python-based AI tool designed to help researchers process, analyze, and summarize PDF research papers efficiently. It leverages advanced reasoning techniques such as Chain-of-Thought (CoT), Self-Consistency, ReAct workflow, and QA verification to provide accurate, step-by-step research insights.
 
 
-## 📂 Project Structure
+## 📁 Project Structure
+
+```plaintext
 research_gpt_assistant/
 │
-├── config.py                 # Configuration for API keys, file paths, and parameters
-├── main.py                   # Main script to run demos and workflows
-├── research_assistant.py     # Core AI reasoning and research functions
+├── config.py                # Configuration for API keys, file paths, and parameters
+├── main.py                  # Main script to run demos and workflows
+├── research_assistant.py    # Core AI reasoning and research functions
 ├── data/
-│   ├── sample_papers/        # PDF research papers for testing
-│   └── processed/            # Extracted text from PDFs
-├── results/                  # Output results: JSON, text summaries
-└── prompts/                  # Optional prompt templates for AI tasks
+│   ├── sample_papers/       # PDF research papers for testing
+│   └── processed/           # Extracted text from PDFs
+├── results/                 # Output results (JSON files, text summaries)
+└── prompts/                 # Optional prompt templates for AI tasks
 
 ## ⚙️ Features
 
@@ -45,8 +47,8 @@ venv\Scripts\activate      # Windows
 pip install -r requirements.txt
 
 ## Add your .env file in research_gpt_assistant/ with your Mistral API key:
-MISTRAL_API_KEY=your_api_key_here
-Make sure .env is listed in .gitignore to keep it private.
+- MISTRAL_API_KEY=your_api_key_here
+- Make sure .env is listed in .gitignore to keep it private.
 
 ## 🚀 How to Run:
 python main.py
